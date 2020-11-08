@@ -1,0 +1,16 @@
+body{
+}
+
+video{
+	background-color: white;
+}
+.background{
+	background: url("background.jpg");
+	width: 100vw;
+	height: 100vh;
+}
+.video_blend{
+	mix-blend-mode: multiply;
+ 	height: 875px;
+  	width: 100%;
+}
