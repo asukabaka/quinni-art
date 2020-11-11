@@ -44,6 +44,8 @@ video{
   	width: 100%;
 }
 
-.top_far{
-	margin-top: 10px;
+.top_bar{
+	padding-top: 10px;
+	padding-bottom: 15px;
+	background: url("clouds.png");
 }
