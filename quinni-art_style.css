@@ -1,16 +1,49 @@
 body{
+	background: url("background.jpg");
+}
+
+h1{
+    font-style: italic;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    letter-spacing: 7px;
+    color: #583B3B;
+}
+
+h2{
+    font-style: italic;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 7px;
+    color: black;
+    font-family: 'VT323', monospace;
+    color: #583B3B;
 }
 
 video{
-	background-color: white;
+	margin-top: 5%;
+	transition: .5s ease;
+}
+
+@media screen and (max-width: 80em) {
+	video{
+	margin-top: 1%;
+	transition: .5s ease;
+	}
 }
 .background{
 	background: url("background.jpg");
 	width: 100vw;
 	height: 100vh;
 }
+
 .video_blend{
 	mix-blend-mode: multiply;
  	height: 875px;
   	width: 100%;
+}
+
+.top_far{
+	margin-top: 10px;
 }
