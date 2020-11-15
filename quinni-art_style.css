@@ -1,5 +1,7 @@
 body{
 	background: url("background.jpg");
+  width: 100%;
+  height: 100%;
 }
 
 h1{
@@ -103,9 +105,10 @@ video{
     visibility: hidden;
 }
 
-body:not(.mobile) .hover-title:hover + .hover-image {
+.hover-title:hover + .hover-image {
     visibility: visible;
     pointer-events: none;
+    transition: 1s ease;
 }
 
 .hover-image {
@@ -114,11 +117,12 @@ body:not(.mobile) .hover-title:hover + .hover-image {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: -1;
+    z-index: 9999;
     pointer-events: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 
 /* Change width and height to scale images */
     width: 90vw;
@@ -138,6 +142,9 @@ body:not(.mobile) .hover-title:hover + .hover-image {
 	background: url("background.jpg");
 	width: 100vw;
 	height: 100vh;
+	z-index: -10;
+	position: fixed;
+	top: 0;
 }
 
 .video_blend{
@@ -150,4 +157,159 @@ body:not(.mobile) .hover-title:hover + .hover-image {
 	padding-top: 10px;
 	padding-bottom: 15px;
 	background: url("clouds.png");
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js{
+  width: 100%;
+  height: 100%;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+  max-width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 4fr);
+  grid-template-areas: "sidex4 side1 side1"
+                       "sidex3 sidex3 side2"
+                       "side3 side3 sidex2"
+                       "sidex sidex sidex"
+                        ;
+    overflow: hidden;
+}
+
+
+.tile_x{
+  grid-area: sidex;
+  /*display: block;*/
+  background-color: black;
+  width: 100%; 
+  height: 100px; 
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+  opacity: 0;
+}
+
+.tile_x:hover{
+  transition: ease 1s;
+  opacity: .2;
+
+
+}
+
+
+.tile_x2{
+  grid-area: sidex2;
+  /*display: block;*/
+  width: 100%; 
+  height: 100%; 
+  background: black;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+  opacity: 0;
+}
+
+.tile_x2:hover{
+  transition: ease 1s;
+  opacity: .2;
+}
+
+.tile_x3{
+  grid-area: sidex3;
+  /*display: block;*/
+  width: 100%; 
+  height: 75px; 
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 1s;
+  opacity: 0;
+}
+
+.tile_x3:hover{
+  transition: ease 1s;
+  opacity: .7;
+}
+
+
+
+.tile_x4{
+  grid-area: sidex4;
+  /*display: block;*/
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+  opacity: 0;
+}
+
+.tile_x4:hover{
+  transition: ease 1s;
+  opacity: 1;
+}
+
+.tile_1{
+  grid-area: side1;
+  /*display: block;*/
+  width: 100%; 
+  height: 100%; 
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+}
+
+
+
+.tile_2{
+  grid-area: side2;
+  /*display: block;*/
+  width: 100%; 
+  height: 100%; 
+  background: black;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+  opacity: .5;
+}
+
+.tile_3{
+  grid-area: side3;
+  /*display: block;*/
+  width: 100%; 
+  height: 100%; 
+  opacity: 0;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: ease 3s;
+}
+
+.tile_3:hover{
+  opacity: 1;
+
+}
+
+
+.about_text{
+ font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 1.25em;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  opacity: 1;
 }
