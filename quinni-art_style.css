@@ -1,7 +1,8 @@
 body{
 	background: url("background.jpg");
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
 }
 
 h1{
@@ -35,113 +36,11 @@ video{
 	}
 }
 
-/*code for flying clouds element*/
-.flier {
-	pointer-events: none;
-}
-
-.flier > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly 100s linear infinite;
-        pointer-events: none !important;
-	top: 0;
-	left: 0;
-	transform: translateX(-120%) translateY(-120%) rotateZ(0);
-	position: fixed;
-	animation-delay: 1s;
-	z-index: 999999;
-}
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
-
-@keyframes fly {
-
-	98.001%, 0% {
-                display: block;
-		transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
-	}
-
-	15% {
-		transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
-	}
-
-	15.001%, 18% {
-		transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
-	}
-
-	40% {
-		transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
-	}
-
-	40.001%, 43% {
-		transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
-	}
-
-	65% {
-		transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
-	}
-
-	65.001%, 68% {
-		transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
-	}
-
-	95% {
-		transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
-	}
-}
-/*end of flying clouds*/
-
-/*hover reveal code*/
-.hover-title {
-    display: inline;
-    pointer-events: auto;
-    cursor: pointer;
-}
-
-.hover-image {
-    visibility: hidden;
-}
-
-.hover-title:hover + .hover-image {
-    visibility: visible;
-    pointer-events: none;
-    transition: 1s ease;
-}
-
-.hover-image {
-    display: flex;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 9999;
-    pointer-events: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-
-/* Change width and height to scale images */
-    width: 90vw;
-    height: 90vh;
-}
-
-.hover-image img {
-    max-width: 100% !important;
-    max-height: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    margin-bottom: 0;
-}
-/*end of hover reveal code*/
 
 .background{
 	background: url("background.jpg");
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	z-index: -10;
 	position: fixed;
 	top: 0;
@@ -156,7 +55,7 @@ video{
 .top_bar{
 	padding-top: 10px;
 	padding-bottom: 15px;
-	background: url("clouds.png");
+	/*background: url("clouds.png");*/
 }
 
 
@@ -170,8 +69,8 @@ video{
   background-position: 50% 50%;
   background-repeat: no-repeat;
   margin: 0 auto;
-  max-width: 100vw;
-  height: 100vh;
+  max-width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 4fr);
   grid-template-areas: "sidex4 side1 side1"
